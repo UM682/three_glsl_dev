@@ -43,6 +43,15 @@ export default class ArtworkGL{
         this.scene.add(this.mesh);
 
         // 画面に表示
+        this.render();
+    }
+
+    render() {
+        requestAnimationFrame(() => { this.render(); });
+
+        this.mesh.rotation.x += 0.01;
+        this.mesh.rotation.y += 0.01;
+
         this.renderer.render(this.scene, this.camera);
     }
 };
